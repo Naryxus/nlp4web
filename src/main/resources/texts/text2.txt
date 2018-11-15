@@ -1,0 +1,2 @@
+This is the second text.
+It has only two lines.
