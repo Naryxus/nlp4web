@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="de.tudarmstadt.ukp.teaching.nlp4web.tutorial.tut1" />
+        <module name="nlp4web" />
       </profile>
     </annotationProcessing>
   </component>
