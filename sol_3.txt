@@ -1,0 +1,13 @@
+Problem 1
+
+We can see, that tokenizing only by whitespaces is not sufficient to produce tokens, that can be processed further by
+some engines. For example <man.> can't be mapped to the noun <man>, what the token actually should be. Another problem,
+that does not occur for the example string, is, that words, that are belonging together, i.e. building a token, but have
+whitespaces between the words, would be divided into several tokens. And like in the problem description said, we also
+see the problem of clitic contractions.
+
+Problem 2
+
+The improvement of the BreakIterator-WordInstance over the whitespace-tokenizer is, that now punctuation is seperated
+as an own token. The problem is now, that also whitespace is now read as a token and we still have the problem with
+<I'm>, i.e. the clitic contraction.

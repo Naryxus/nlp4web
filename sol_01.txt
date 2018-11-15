@@ -1,0 +1,3 @@
+The number of sentences in the console after executing the pipeline differs from the number of "sentences" in the file news.txt.
+This is because we defined a sentence as a line in the file. But indeed there are more sentences in a line seperated by dots.
+So the analysis engine notices more sentences than lines are in the file.

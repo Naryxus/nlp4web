@@ -67,6 +67,19 @@ public class WebpageReader extends JCasCollectionReader_ImplBase {
     private String webpageURL;
 
     /**
+     * UIMA configuration parameter to set the selector element for JSoup. The default value is the body element of the
+     * webpage.
+     */
+    public static final String PARAM_SELECTOR = "Selector";
+    @ConfigurationParameter(
+            name = PARAM_SELECTOR,
+            description = "Sets the selector for JSoup, which elements should be crawled",
+            mandatory = false,
+            defaultValue = "body"
+    )
+    private String selector;
+
+    /**
      * Initializes the reader with the given UimaContext-object.
      * Sets the index of the current document to zero.
      * Loads the document via JSoup and filter all &lt;p&gt;-blocks.
@@ -83,7 +96,7 @@ public class WebpageReader extends JCasCollectionReader_ImplBase {
 
         try {
             Document document = Jsoup.connect(webpageURL).get();
-            Elements elements = document.select("p");
+            Elements elements = document.select(selector);
             max = elements.size();
             iterator = elements.iterator();
         } catch(IOException e) {
